@@ -1,78 +1,54 @@
-# React + TypeScript + Vite
+# Tripleten web_project_around_es
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project description
 
-Currently, two official plugins are available:
+This project (part of the Tripleten bootcamp) aims to bring a static website to life using JavaScript. The project is divided into sections; this Readme will be updated as each section is developed.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Part 1:
 
-## React Compiler
+In the first part, I created a ‘script’ directory and an ‘index.js’ file, and linked them to the ‘index.html’ file. The main aim of this first part was to create an array of six objects, each of which represents one of the cards that are currently hard-coded. Each object has a ‘name’ key with the value of the name of a place in the US, and a ‘link’ key with the value of a link to an image of that place.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+### Part 2:
 
-Note: This will impact Vite dev & build performances.
-You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
+In the second part, I added functionality allowing the user to edit the profile name and description. I achieved this by selecting DOM elements in JavaScript and creating the following functions and events:
 
-## Expanding the ESLint configuration
+- Open the modal containing the form for editing the profile name and description by clicking the ‘Edit Profile’ button.
+- Close the modal containing the form for editing the profile name and description by clicking the close button.
+- Capture the values entered into the text inputs to update the values of the elements that store the profile name and description
+- Capture the values entered into the text inputs to update the values of the elements storing the profile name and description when the form is submitted.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Part 3:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+In the third part, I created the logic to render each card from the array of objects I created in the first part, and removed the cards that had been hard-coded directly into the index.html file.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+I added functionality to the button to add a new card by selecting the button and attaching a click event to it, which brings up the modal containing the form for creating a new card.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+I added the logic to generate and render a new card when the form to create a new card is submitted, by selecting and cloning the `li` element and its child elements within the `template` element, which replaced the previously hardcoded cards.
 
-```
+I added functionality to the ‘Like’ and ‘Delete’ buttons on each card.
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+I added the logic so that the user can open a larger version of each card by clicking on the image of each card.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Part 4:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+In the fourth part, I added the logic for validating forms used in profile editing and adding a new card. I also refactored the code to make it modular, creating new .js files, exporting the functions, and importing them into the main .js file (index.js).
 
-```
+### Part 5:
+
+In Part 5, I refactored the code to make use of the security features provided by TypeScript, creating classes for each part of the application and using loose coupling, thereby ensuring the code’s maintainability.
+
+### Part 6:
+
+In Part 6, I implemented an API (provided by Tripleten) to work with and practise asynchronous code and data requests, whilst maintaining independence between classes (loose coupling) and ensuring that user data is preserved within the application. The user experience was also improved by displaying a different status when requesting or updating data from the server and by adding real interactivity with the cards created.
+
+### Part 7:
+
+In this section, I began migrating the previous project, which used only TypeScript, to a React + TypeScript project.
+I created the components needed to display the project in the browser using mock data and prepared the code to implement the API in the next stage.
+
+## Technologies
+
+- JavaScript
+- TypeScript
+- React
+- Vite
